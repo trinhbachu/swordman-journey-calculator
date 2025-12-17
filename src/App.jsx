@@ -13,9 +13,9 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const total = (Number(attack) * (1 + Number(attackPercent) / 100)) +
-                  (Number(def) * (1 + Number(defPercent) / 100)) +
-                  (Number(speed) * (1 + Number(speedPercent) / 100))
+    const total = (attackPercent !== 0 ? Number(attack) * (1 + Number(attackPercent) / 100) : 0) +
+      (defPercent !== 0 ? Number(def) * (1 + Number(defPercent) / 100) : 0) +
+      (speedPercent !== 0 ? Number(speed) * (1 + Number(speedPercent) / 100) : 0)
     
     setSavedInputs([...savedInputs, {
       attack,
